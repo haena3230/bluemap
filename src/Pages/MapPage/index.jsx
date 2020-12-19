@@ -8,84 +8,49 @@ import axios from 'axios';
 const URL = 'http://133.186.159.137:3000'
 
 function NaverMapAPI(props) {
-  const navermaps = window.naver.maps;
-    
+  
   return (
-    
-    <NaverMap
-      mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
-      style={{
-        width: '80%', // 네이버지도 가로 길이
-        height: '85vh' // 네이버지도 세로 길이
-      }}
-      defaultCenter={{ lat: props.lat, lng: props.lon }} // 지도 초기 위치
-      defaultZoom={14} // 지도 초기 확대 배율
+    <RenderAfterNavermapsLoaded
+      ncpClientId={'hh83zq7732'} 
+      error={<p>Maps Load Error</p>}
+      loading={<p>Maps Loading...</p>}
     >
+      <NaverMap
+        mapDivId={"map"} 
+        style={{
+          width: '80%',
+          height: '100vh'
+        }}
+        defaultCenter={{ lat: props.lat, lng: props.lon }} // 지도 초기 위치
+        defaultZoom={14}
+      >
+        {props.data!==null?(
+          props.data.map((res)=>{
+              return(
+                  <Marker
+                      key={res.id}
+                      position={{ lat: res.latitude, lng: res.longitude }}
+                      animation={2}
+                      onClick={() => {
+                        props.setOne(res.specification);
+                        props.setTwo(res.agencyName)
+                        props.setThree(res.county)
+                        props.setFour(res.city)
+                        props.setFive(res.address)
+                        props.setSix(res.specificAddress)
+                        props.setSeven(res.phone)
+                        props.setEight(res.homepage)
+                      }}
+                    />
+              )
+            })
+        ):(
+          null
+        )}
         
-<Marker
-            key={1}
-            position={new navermaps.LatLng(37.273086724,127.049477554)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-           <Marker
-            key={2}
-            position={new navermaps.LatLng(37.265230685,127.032797001)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-           <Marker
-            key={3}
-            position={new navermaps.LatLng(37.274630751,127.043111707)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-           <Marker
-            key={4}
-            position={new navermaps.LatLng(37.274964685,127.044536519)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-          <Marker
-            key={5}
-            position={new navermaps.LatLng(37.280886063,127.047320079)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-          <Marker
-            key={6}
-            position={new navermaps.LatLng(37.259848509,127.023361181)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-          <Marker
-            key={7}
-            position={new navermaps.LatLng(37.25981886,127.022936654)}
-            animation={2}
-            onClick={() => {
-              alert(props.data)
-              console.log(props.data)
-            }}
-          />
-        </NaverMap>
+                
+      </NaverMap>
+    </RenderAfterNavermapsLoaded>
   );
 }
 
@@ -95,23 +60,33 @@ const MapPage =()=>{
   const [load,setLoad]=useState(false);
   const[loadt,setLoadt]=useState(false);
   const [data,setData]=useState([])
-  navigator.geolocation.getCurrentPosition(async(position)=> {
-    await setLat(position.coords.latitude)
-    await setLon(position.coords.longitude);
-    setLoad(true);
-  });
-  try {
-          axios.get(`${URL}/center/${lat}/${lon}`)
-          .then((res)=>{
-            setData(JSON.stringify(res.data))
-            setLoadt(true)
-          })
-    }
-    catch (error) {
-        console.log(error);
-    }
+  function map(){
+     navigator.geolocation.getCurrentPosition(async(position)=> {
+        await setLat(position.coords.latitude)
+        await setLon(position.coords.longitude);
+        setLoad(true);
+      });
+      try {
+              axios.get(`${URL}/center/${lat}/${lon}`)
+              .then((res)=>{
+                setData(res.data)
+                setLoadt(true)
+              })
+        }
+        catch (error) {
+            console.log(error);
+        }
+  }
+  const[one,setOne]=useState('');
+  const[two,setTwo]=useState('');
+  const[three,setThree]=useState('');
+  const[four,setFour]=useState('');
+  const[five,setFive]=useState('');
+  const[six,setSix]=useState('');
+  const[seven,setSeven]=useState('');
+  const[eight,setEight]=useState('');
   useEffect(()=>{
-    
+     map()
   },[load,loadt])
       if('geolocation' in navigator) {
         return(
@@ -120,40 +95,43 @@ const MapPage =()=>{
             <div className="class">
               <div className="title">이름 </div>
               <div className="subClass">
-                  <div>정신 의료기관</div>
-                  <div>강지윤</div>
+                  <div>{one}</div>
+                  <div>{two}</div>
               </div>
             </div>
             <div className="class">
               <div className="title">위치 </div>
               <div className="subClass">
-                  <div>경기도</div>
-                  <div>수원시 영통구</div>
+                  <div>{three}</div>
+                  <div>{four}</div>
               </div>
             </div>
              <div className="class">
               <div className="title">상세 위치 </div>
               <div className="subClass">
-                  <div>경기도 수원시 영통구 봉영로1612</div>
-                  <div>보보스프라자</div>
+                  <div>{five}</div>
+                  <div>{six}</div>
               </div>
             </div>
             <div className="class">
               <div className="title">번호</div>
               <div className="subClass">
-                  <div>031-202-7925</div>
+                  <div>{seven}</div>
+              </div>
+            </div>
+            <div className="class">
+              <div className="title">홈페이지</div>
+              <div className="subClass">
+                  <div>{eight}</div>
               </div>
             </div>
 
           </div>
           {load&&loadt?(
-              <RenderAfterNavermapsLoaded
-                    ncpClientId={'hh83zq7732'} // 자신의 네이버 계정에서 발급받은 Client ID
-                    error={<p>Maps Load Error</p>}
-                    loading={<p>Maps Loading...</p>}
-                    >
-                    <NaverMapAPI lat={lat} lon={lon} data={data}/>
-                </RenderAfterNavermapsLoaded>
+               <NaverMapAPI lat={lat} lon={lon} data={data} 
+                setOne={setOne} setTwo={setTwo} setThree={setThree} setFour={setFour}
+                setFive={setFive} setSix={setSix} setSeven={setSeven} setEight={setEight}/>
+                
           ):(
             <h2>로딩중...</h2>
           )}
