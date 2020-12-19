@@ -12,10 +12,10 @@ import {useDispatch, useSelector } from 'react-redux';
 
 const BoardInPage =()=>{
     const dispatch=useDispatch()
-    // const userId=useSelector((state)=>state.login.dataId)
-    const userId='30'
-    // const userNickname=useSelector((state)=>state.login.userId)
-    const userNickname='양해나'
+    const userId=useSelector((state)=>state.login.dataId)
+    // const userId='30'
+    const userNickname=useSelector((state)=>state.login.userId)
+    // const userNickname='양해나'
     const [load,setLoad] = useState(false);
     
     async function getPost() {

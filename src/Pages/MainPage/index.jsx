@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 import {StyledLink} from '../index'
-
 const MainPage=()=>{
     return(
     <Container>
@@ -10,7 +9,7 @@ const MainPage=()=>{
             <div className="box">자기보고식(이용대상자 본인이 직접 작성)으로 너무 오래 생각하지 마시고 솔직하게응답해 주세요.</div>
             <div className="box">지난주부터 오늘까지 자신의 상태를 가장 잘 나타냈다고 생각되는 항목을 한 가지 골라 표시하세요.</div>
         </BoxContainer>
-              
+        
         <StyledLink to ="/check">
             <Button>
                 <div>자가진단 테스트 시작하기</div>
@@ -44,7 +43,7 @@ export const Container=styled.div`
 export const BoxContainer=styled.div`
     width:100%;
     height:30vh;
-    background-color:${(props)=>props.theme.blue_2};
+    background-color:${(props)=>props.theme.blue_1};
     display:flex;
     justify-content:space-around;
     align-items:center;

@@ -5,14 +5,15 @@ import styled from 'styled-components'
 import {Button} from '../../MainPage'
 import {StyledLink} from '../../index';
 import {URL} from '../index'
+import {useSelector} from 'react-redux'
 
 const BoardWritePage =()=>{
     // 글 작성하기
     const [title,setTitle]=useState('')
     const [content, setContent] = useState('');
     
-    // const userId = useSelector((state)=>state.login.userId)
-    const userId = '30'
+    const userId = useSelector((state)=>state.login.userId)
+    // const userId = '30'
     return(
         <Container>
             <div className="title">

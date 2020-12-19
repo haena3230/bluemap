@@ -9,22 +9,22 @@ const size={
 
 
 const theme={
-    gray_1:'#F8F8F8',
+    gray_1:'#f0efeb',
     gray_2:'#E8E8E8',
-    blue_1:'#3f5fff',
-    blue_2:'#3498DB',
-    blue_3:"#3f51b5",
-    point:"#E74C3C ",
+    blue_1:'#a8dadc',
+    blue_2:'#0096c7',
+    blue_3:"#023e8a",
+    point:"#e63946 ",
     bb_font:{
-        // fontWeight:'bold',
+        fontWeight:'bold',
         fontSize:30,
     },
     b_font:{
-        // fontWeight:'bold',
+        fontWeight:'bold',
         fontSize:17,
     },
     m_font:{
-        // fontWeight:'bold',
+        fontWeight:'bold',
         fontSize:15,
     },
     m_th_font:{

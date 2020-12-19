@@ -20,12 +20,18 @@ function NaverMapAPI(props) {
       defaultCenter={{ lat: props.lat, lng: props.lon }} // 지도 초기 위치
       defaultZoom={13} // 지도 초기 확대 배율
     >
+      {props.data.map((map)=>{
+        return(
           <Marker
-            key={1}
-            position={new navermaps.LatLng(props.lat, props.lon)}
+            key={map.id}
+            position={new navermaps.LatLng(map.latitude, map.longitude)}
             animation={2}
-            onClick={() => {alert(props.data)}}
+            onClick={() => {
+              alert('기관명 : ' +map.specification+', '+ map.agencyName+', 번호 : '+ map.phone+ ', 홈페이지 : ' + map.homepage+ ', 주소 : '+ map.address+ ', '+map.specificAddress+ ', 지역 : '+map.country+', '+map.city)
+            }}
           />
+        )
+      })}
     </NaverMap>
   );
 }
@@ -44,8 +50,7 @@ const MapPage =()=>{
     try {
           axios.get(`${URL}/center/${lat}/${lon}`)
           .then((res)=>{
-            setData(res.data)
-            alert(res.data.status)
+            setData(JSON.stringify(res.data))
           })
     }
     catch (error) {

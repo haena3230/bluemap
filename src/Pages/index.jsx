@@ -31,10 +31,12 @@ const Pages = ()=>{
                         </StyledLink>
                     </Font>
                 </Container>
+                 <StyledLink to ="/">
                  <Title>
-                    <StyledLink to ="/">BLUEMAP</StyledLink>
+                    BLUEMAP
                     <img src={logo} width={50} heigth={50} alt=''/>
                 </Title>
+                </StyledLink>
                 
         </div>
     );
@@ -51,10 +53,10 @@ export const StyledLink = styled(Link)`
 const Title=styled.div`
     font-size:40px;
     font-weight:bold;
-    margin-feft:40px;
+    color:white;
+    margin-left:40px;
     position:fixed;
     top:50px; 
-    color:'#3f51b5';
     display:flex;
     flex-flow:row;
     justify-content:center;
@@ -62,13 +64,13 @@ const Title=styled.div`
 const Font=styled.div`
     .header{
         ${(props)=>props.theme.b_font}
-        
+        color:white;
         padding:0.5vw;
         margin:0 3vw 0 3vw;
          &:hover{
             // transition:all 0.3s ease-in-out;
             border-radius: 20px;
-            background:${(props)=>props.theme.blue_1};
+            background:${(props)=>props.theme.point};
             color:white;
             
          }
@@ -84,7 +86,7 @@ const Container = styled.div`
     align-items: flex-end;
     justify-content:flex-end;
     box-shadow:1px 1px 1px gray;
-    background-color:${(props)=>props.theme.gray_1};
+    background-color:${(props)=>props.theme.blue_3};
     
 `
 

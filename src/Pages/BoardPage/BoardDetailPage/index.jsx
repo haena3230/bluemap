@@ -13,8 +13,8 @@ const BoardDetailPage =({match})=>{
     const[load,setLoad]=useState(false)
     const axios= require('axios')
     //userID
-    // const userId = useSelector((state)=>state.login.userId)
-    const userId = '30'
+    const userId = useSelector((state)=>state.login.userId)
+    // const userId = '30'
    
     // post 정보 가져오기
     const [postData,setPostData]=useState([])
