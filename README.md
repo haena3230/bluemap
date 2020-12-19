@@ -24,8 +24,6 @@
 
 [시연영상](https://youtu.be/slY1AST2WKQ)
 
-[검사하러가기](http://133.186.159.137:80/)
-
 ### Quick Start
 
 ```
