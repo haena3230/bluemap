@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Blue map
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://github.com/Gongcu/Blue_map/blob/master/bluemap.png"></img>
 
-## Available Scripts
+### 소개📖
 
-In the project directory, you can run:
+현재 코로나(COVID-19)로 인해 사회적 거리 두기가 장기화 되어 ‘코로나 블루’가 급증하고 있다.
+최근 한국건강증진개발원에서 의뢰하여 조사한 전국 만 20세~65세 이하의 성인 남녀 1,031명을 대상으로 ‘코로나 19로 인한 건강 상태’를 조사한 결과
+전체 응답자의 40.7%가 코로나 블루를 ‘경험 했다’고 응답했다.
+사람들은 이러한 증세로 답답함과 우울감을 호소하는 경우가 제일 많았고, 증세가 악화되면 실제 우울증으로 발전하기도 한다.
+(관련 기사: 국민 40.7% "코로나19로 우울·불안 경험!" (mdon.co.kr))
 
-### `yarn start`
+따라서, 블루맵팀에서는 우울증 자가 진단, 정신 증진 센터 위치 제공, 우울증 극복 후기,
+방법을 공유하는 커뮤니티를 웹 애플리케이션의 형태로 제공하여 ‘사회적 거리 두기’로 인한 ‘코로나 블루’를 호전할 수 있게 도와 상황을 극복하고자 한다.
+우울증 자가 진단을 통해 사용자들은 우울 증세가 악화되기 전에 예방을 할 수 있다.
+그리고, 사용자의 위치를 기반으로 주변 정신보건시설 정보를 제공한다.
+또한, 우울증 극복 후기, 방법을 공유하는 커뮤니티를 제공하여 우울증 극복에 도움을 줄 수 있다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 기능🔧
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 백 우울 척도 검사(BDI)를 통한 우울증 검사
+- 사용자 위치 기반 정신 보건 시설 위치 제공
+- 우울증 극복 후기, 방법을 공유하는 커뮤니티
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[시연영상](https://youtu.be/slY1AST2WKQ)
