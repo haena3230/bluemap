@@ -1,4 +1,5 @@
 # Blue map
+## Blue map project web frontend 
 
 <img src="https://github.com/Gongcu/Blue_map/blob/master/bluemap.png"></img>
 
