@@ -1,5 +1,5 @@
 # Blue map
-## Blue map project web frontend 
+### React 기반 Web Front-End
 
 <img src="https://github.com/Gongcu/Blue_map/blob/master/bluemap.png"></img>
 
@@ -33,3 +33,6 @@ cd bluemap
 npm install
 npm start
 ```
+
+### 자세히 
+https://www.notion.so/haena3230/Bluemap-Project-619c8410618c4f378c01700a4076b5de
