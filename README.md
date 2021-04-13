@@ -34,5 +34,3 @@ npm install
 npm start
 ```
 
-### 자세히 
-https://www.notion.so/haena3230/Bluemap-Project-619c8410618c4f378c01700a4076b5de
